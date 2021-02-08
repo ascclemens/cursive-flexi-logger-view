@@ -330,9 +330,9 @@ pub struct CursiveLogWriter {
 ///         .expect("failed to initialize logger!");
 /// }
 /// ```
-pub fn cursive_flexi_logger(siv: &Cursive) -> Box<CursiveLogWriter> {
+pub fn cursive_flexi_logger(cb_sink: &cursive_core::CbSink) -> Box<CursiveLogWriter> {
     Box::new(CursiveLogWriter {
-        sink: siv.cb_sink().clone(),
+        sink: cb_sink.clone(),
     })
 }
 
